@@ -38,19 +38,16 @@ mat-form-field {
 /* filepath: /home/msuth/repos/frontend/ang-sing-mat/src/app/app.component.scss */
 .calendar {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    /* 7 equal columns for days of the week */
-    grid-template-rows: 50px repeat(5, 100%);
-
-    //     grid-template-columns: 60px repeat(7, 1fr); /* Time + 7 days */
-    //   grid-template-rows: repeat(24, 60px); /* 24 hours, 1 row per hour */
-    /* 1 row for headers, 6 rows for days */
+    grid-template-columns: repeat(7, 1fr); // 7 equal columns for days of the week
+    grid-template-rows: auto repeat(6, 1fr); // 1 row for headers, 6 rows for days
     gap: 4px;
     width: 100%;
-    // height: 100vh;
-    // max-width: 600px;
+    height: calc(100vh - 64px); // Subtract the height of the toolbar or any other fixed elements
+    max-width: 100%; // Prevent horizontal overflow
     margin: 0 auto;
-}
+    box-sizing: border-box; // Include padding and borders in width/height calculations
+    overflow: hidden; // Prevent scrolling inside the calendar
+  }
 
 .day {
     display: flex;
